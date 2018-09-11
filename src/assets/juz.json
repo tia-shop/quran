@@ -1,0 +1,392 @@
+[
+    {
+        "number": "1",
+        "start": {
+            "number": "1",
+            "verse": "1",
+            "name": "Al-Fatiha"
+        },
+        "end": {
+            "number": "2",
+            "verse": "141",
+            "name": "Al-Baqara"
+        }
+    },
+    {
+        "number": "2",
+        "start": {
+            "number": "2",
+            "verse": "142",
+            "name": "Al-Baqara"
+        },
+        "end": {
+            "number": "2",
+            "verse": "252",
+            "name": "Al-Baqara"
+        }
+    },
+    {
+        "number": "3",
+        "start": {
+            "number": "2",
+            "verse": "253",
+            "name": "Al-Baqara"
+        },
+        "end": {
+            "number": "3",
+            "verse": "92",
+            "name": "Aal-Imran"
+        }
+    },
+    {
+        "number": "4",
+        "start": {
+            "number": "3",
+            "verse": "93",
+            "name": "Aal-Imran"
+        },
+        "end": {
+            "number": "4",
+            "verse": "23",
+            "name": "An-Nisaa'"
+        }
+    },
+    {
+        "number": "5",
+        "start": {
+            "number": "4",
+            "verse": "24",
+            "name": "An-Nisaa'"
+        },
+        "end": {
+            "number": "4",
+            "verse": "147",
+            "name": "An-Nisaa'"
+        }
+    },
+    {
+        "number": "6",
+        "start": {
+            "number": "4",
+            "verse": "148",
+            "name": "An-Nisaa'"
+        },
+        "end": {
+            "number": "5",
+            "verse": "81",
+            "name": "Al-Ma'ida"
+        }
+    },
+    {
+        "number": "7",
+        "start": {
+            "number": "5",
+            "verse": "82",
+            "name": "Al-Ma'ida"
+        },
+        "end": {
+            "number": "6",
+            "verse": "110",
+            "name": "Al-An'am"
+        }
+    },
+    {
+        "number": "8",
+        "start": {
+            "number": "6",
+            "verse": "111",
+            "name": "Al-An'am"
+        },
+        "end": {
+            "number": "7",
+            "verse": "87",
+            "name": "Al-A'raf"
+        }
+    },
+    {
+        "number": "9",
+        "start": {
+            "number": "7",
+            "verse": "88",
+            "name": "Al-A'raf"
+        },
+        "end": {
+            "number": "8",
+            "verse": "40",
+            "name": "Al-Anfal"
+        }
+    },
+    {
+        "number": "10",
+        "start": {
+            "number": "8",
+            "verse": "41",
+            "name": "Al-Anfal"
+        },
+        "end": {
+            "number": "9",
+            "verse": "92",
+            "name": "Al-Tawba"
+        }
+    },
+    {
+        "number": "11",
+        "start": {
+            "number": "9",
+            "verse": "93",
+            "name": "Al-Tawba"
+        },
+        "end": {
+            "number": "11",
+            "verse": "5",
+            "name": "Hud"
+        }
+    },
+    {
+        "number": "12",
+        "start": {
+            "number": "11",
+            "verse": "6",
+            "name": "Hud"
+        },
+        "end": {
+            "number": "12",
+            "verse": "52",
+            "name": "Yusuf"
+        }
+    },
+    {
+        "number": "13",
+        "start": {
+            "number": "12",
+            "verse": "53",
+            "name": "Yusuf"
+        },
+        "end": {
+            "number": "14",
+            "verse": "52",
+            "name": "Ibrahim"
+        }
+    },
+    {
+        "number": "14",
+        "start": {
+            "number": "15",
+            "verse": "1",
+            "name": "Al-Hijr"
+        },
+        "end": {
+            "number": "16",
+            "verse": "128",
+            "name": "An-Nahl"
+        }
+    },
+    {
+        "number": "15",
+        "start": {
+            "number": "17",
+            "verse": "1",
+            "name": "Al-Israa"
+        },
+        "end": {
+            "number": "18",
+            "verse": "74",
+            "name": "Al-Kahf"
+        }
+    },
+    {
+        "number": "16",
+        "start": {
+            "number": "18",
+            "verse": "75",
+            "name": "Al-Kahf"
+        },
+        "end": {
+            "number": "20",
+            "verse": "135",
+            "name": "Ta-Ha"
+        }
+    },
+    {
+        "number": "17",
+        "start": {
+            "number": "21",
+            "verse": "1",
+            "name": "Al-Anbiya"
+        },
+        "end": {
+            "number": "22",
+            "verse": "78",
+            "name": "Al-Hajj"
+        }
+    },
+    {
+        "number": "18",
+        "start": {
+            "number": "23",
+            "verse": "1",
+            "name": "Al-Muminun"
+        },
+        "end": {
+            "number": "25",
+            "verse": "20",
+            "name": "Al-Furqan"
+        }
+    },
+    {
+        "number": "19",
+        "start": {
+            "number": "25",
+            "verse": "21",
+            "name": "Al-Furqan"
+        },
+        "end": {
+            "number": "27",
+            "verse": "55",
+            "name": "An-Naml"
+        }
+    },
+    {
+        "number": "20",
+        "start": {
+            "number": "27",
+            "verse": "56",
+            "name": "An-Naml"
+        },
+        "end": {
+            "number": "29",
+            "verse": "45",
+            "name": "Al-Ankabut"
+        }
+    },
+    {
+        "number": "21",
+        "start": {
+            "number": "29",
+            "verse": "46",
+            "name": "Al-Ankabut"
+        },
+        "end": {
+            "number": "33",
+            "verse": "30",
+            "name": "Al-Ahzab"
+        }
+    },
+    {
+        "number": "22",
+        "start": {
+            "number": "33",
+            "verse": "31",
+            "name": "Al-Ahzab"
+        },
+        "end": {
+            "number": "36",
+            "verse": "27",
+            "name": "Yasin"
+        }
+    },
+    {
+        "number": "23",
+        "start": {
+            "number": "36",
+            "verse": "28",
+            "name": "Yasin"
+        },
+        "end": {
+            "number": "39",
+            "verse": "31",
+            "name": "Az-Zumar"
+        }
+    },
+    {
+        "number": "24",
+        "start": {
+            "number": "39",
+            "verse": "32",
+            "name": "Az-Zumar"
+        },
+        "end": {
+            "number": "41",
+            "verse": "46",
+            "name": "Fussilat"
+        }
+    },
+    {
+        "number": "25",
+        "start": {
+            "number": "41",
+            "verse": "47",
+            "name": "Fussilat"
+        },
+        "end": {
+            "number": "45",
+            "verse": "37",
+            "name": "Al-Jathiya"
+        }
+    },
+    {
+        "number": "26",
+        "start": {
+            "number": "46",
+            "verse": "1",
+            "name": "Al-Ahqaf"
+        },
+        "end": {
+            "number": "51",
+            "verse": "30",
+            "name": "Az-Zariyat"
+        }
+    },
+    {
+        "number": "27",
+        "start": {
+            "number": "51",
+            "verse": "31",
+            "name": "Az-Zariyat"
+        },
+        "end": {
+            "number": "57",
+            "verse": "29",
+            "name": "Al-Hadid"
+        }
+    },
+    {
+        "number": "28",
+        "start": {
+            "number": "58",
+            "verse": "1",
+            "name": "Al-Mujadilah"
+        },
+        "end": {
+            "number": "66",
+            "verse": "12",
+            "name": "At-Tahrim"
+        }
+    },
+    {
+        "number": "29",
+        "start": {
+            "number": "67",
+            "verse": "1",
+            "name": "Al-Mulk"
+        },
+        "end": {
+            "number": "77",
+            "verse": "50",
+            "name": "Al-Mursalat"
+        }
+    },
+    {
+        "number": "30",
+        "start": {
+            "number": "78",
+            "verse": "1",
+            "name": "An-Naba"
+        },
+        "end": {
+            "number": "114",
+            "verse": "6",
+            "name": "An-Nas"
+        }
+    }
+]
