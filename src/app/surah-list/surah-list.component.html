@@ -1,0 +1,48 @@
+<aside class="right-side" *ngIf="surahs">
+  <div class="logo" #logo>
+    <img src="assets/logo.png">
+    <h4>Al-Qur'an</h4>
+    <h5>Terjemahan Indonesia</h5>
+  </div>
+
+  <div class="filter" #filter>
+    <div class="filter-button-group">
+      <button [class]="activeFilter === 'surah' ? 'active' : ''" (click)="setActiveFilter('surah')">Surat</button>
+      <button [class]="activeFilter === 'juz' ? 'active' : ''" (click)="setActiveFilter('juz')">Juz</button>
+    </div>
+  </div>
+
+  <ng-scrollbar class="surah-list" #surahList [hidden]="activeFilter === 'juz'">
+    <a [class]="activeSurah == surah?.chapter_number ? 'surah-item active' : 'surah-item'" *ngFor="let surah of surahs"
+      [routerLink]="'/'+surah?.chapter_number">
+
+      <div class="surah-number-wrapper">
+        <span class="surah-number">{{ surah?.chapter_number }}</span>
+      </div>
+
+      <div class="surah-name">
+        <span class="surah-name-indonesia">{{ surah?.name_simple }}</span>
+        <br />
+        <span class="surah-name-translation">{{ surah?.translated_name.name }}</span>
+      </div>
+
+      <div class="surah-icon">
+        <i [class]="'icon-surah'+surah?.chapter_number"></i>
+      </div>
+    </a>
+  </ng-scrollbar>
+
+  <ng-scrollbar class="juz-list" #juzList [hidden]="activeFilter === 'surah'">
+    <a class="juz-item" [routerLink]="'/juz/'+juz?.juz_number" *ngFor="let juz of juzs; let i = index">
+
+      <div class="juz-number-wrapper">
+        <span class="juz-number">{{ juz?.juz_number }}</span>
+      </div>
+      <div class="juz-ayah-range">
+        <span class="ayah-start">{{ getSurah(juz?.verse_mapping, 'first') }}</span>
+        <br />
+        <span class="ayah-end">{{ getSurah(juz?.verse_mapping, 'last') }}</span>
+      </div>
+    </a>
+  </ng-scrollbar>
+</aside>

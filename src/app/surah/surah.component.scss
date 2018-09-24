@@ -1,163 +1,128 @@
 @import '../../global.scss';
 
-.right-side {
-    background-color: $primaryColor;
+@font-face {
+    font-family: lpmq;
+    src: url(../../assets/fonts/lpmq.otf);
+    src: url(../../assets/fonts/lpmq.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: ayah_number;
+    src: url(../../assets/fonts/MSI_BASMALAH.otf);
+}
+.icon-number {
+    font-family: ayah_number;
+}
+.sheet-wrapper {
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 18%;
+    width: 82%;
     height: 100%;
-    overflow-y: hidden;
+    background-color: #f1f1f1;
 }
-.logo {
+.sheet {
+    padding: 30px;
+    background-color: $primaryColor;
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 4px;
+}
+.surah-header {
     width: 100%;
-    padding: 10px 0;
+    padding: 10px;
+    background-color: $primaryColorDark;
+    border-radius: 100px;
     text-align: center;
-    overflow: auto;
-    img {
-        width: 100px;
-    }
-    h4, h5 {
-        margin: 0;
+    overflow: hidden;
+    position: relative;
+    h1 {
         color: #fff;
+        margin: 0;
+        i {
+            font-size: 30px
+        }
     }
 }
-.filter {
-    &-button-group {
-        overflow: auto;
-        display: block;
-        button {
-            width: 50%;
-            display: inline-block;
-            float: left;
-            border: none;
-            outline: none;
-            background-color: $primaryColorDark;
-            color: #fff;
-            padding: 10px;
-            cursor: pointer;
-            &.active {
-                background-color: $secondaryColor !important;
+.surah-container {
+    background-color: #fff;
+    border-radius: 4px;
+    margin-top: 15px;
+    overflow: auto;
+}
+.surah-name-translation {
+    padding: 5px 50px;
+    display: inline-block;
+    border-radius: 50px;
+    line-height: 12px;
+    margin-bottom: -20px;
+    span {
+        color: $secondaryColor;
+        font-size: 12px;
+    }
+}
+.ornament {
+    width: 65px;
+    height: 65px;
+    background-image: url(../../assets/images/ornament.png);
+    background-size: 100%;
+    position: absolute;
+    &.right {
+        right: 10px;
+        top: 10px;
+    }
+}
+.bismillah {
+    text-align: center;
+    font-size: 30px;
+}
+.terjemah {
+    color: $primaryColor;
+    font-weight: bold;
+}
+.ayah {
+    padding: 20px;
+    overflow: auto;
+    border-bottom: 1px solid #eee;
+    
+    &-control {
+        width: 15%;
+        float: left;
+        display: inline-block;
+        .ayah-index {
+            width: 60px;
+            height: 60px;
+            background-image: url(../../assets/images/ayah-frame.png);
+            background-size: contain;
+            text-align: center;
+            padding: 16px 0;
+            line-height: 12px;
+            .ayah-key {
+                font-weight: bold;
+                font-size: 14px;
+            }
+            .ayah-juz-number {
+                font-size: 12px;
             }
         }
     }
-}
-.search-box {
-    width: 100%;
-    display: block;
-    background-color: #335081;
-    padding: 6px 10px;
-    border: none;
-    outline: none;
-    color: #fff;
-}
-.surah {
-    &-list {
-        position: absolute;
-        overflow-y: scroll;
-        display: block;
-        padding-bottom: 35px;
-    }
-    &-item {
-        float: left;
-        display: inline-block;
-        width: 100%;
-        padding: 10px;
-        cursor: pointer;
-        overflow: auto;
-    }
-    &-item:hover, &-item.active {
-        background-color: $primaryColorDark;
-    }
-    &-number-wrapper {
-        width: 15%;
-        padding: 8px 0;
-        float: left;
-        display: inline-block;
-        font-size: 12px;
-        text-align: center;
-        background-image: url(../../assets/images/frame.png);
-        background-position: center;
-        background-size: 100%;
-    }
-    &-number {
-        color: $secondaryColor;
-        font-size: 10px;
-        margin-top: 0px;
-        display: block;
-    }
-    &-name {
-        width: 55%;
-        float: left;
-        display: inline-block;
-        margin-top: -4px;
-        padding-left: 10px;
-        line-height: 15px;
-    }
-    &-name-indonesia {
-        font-size: 12px;
-        font-weight: bold;
-        color: #fff;
-    }
-    &-name-translation {
-        font-size: 11px;
-        color: #eee;
-    }
-    &-icon {
-        width: 30%;
-        float: left;
-        display: inline-block;
-        text-align: right;
-        i {
-            color: #fff;
-        }
-    }
-}
-.juz {
-    &-list {
-        position: absolute;
-        overflow-y: scroll;
-        display: block;
-        padding-bottom: 40px;
-    }
-    &-number-wrapper {
-        width: 15%;
-        padding: 8px 0;
-        float: left;
-        display: inline-block;
-        font-size: 12px;
-        text-align: center;
-        background-image: url(../../assets/images/frame.png);
-        background-position: center;
-        background-size: 100%;
-    }
-    &-number {
-        color: $secondaryColor;
-        font-size: 10px;
-        margin-top: 0px;
-        display: block;
-    }
-    &-ayah-range {
-        padding-left: 10px;
+    &-text {
         width: 85%;
         float: left;
-    }
-    &-item {
-        float: left;
         display: inline-block;
-        width: 100%;
-        padding: 10px;
-        cursor: pointer;
-        overflow: auto;
-        text-decoration: none;
-        
-        .juz-ayah-range {
-            font-size: 11px;
-            color: #eee;
-        }
     }
-    &-item:hover, &-item.active {
-        background-color: $primaryColorDark;
+    &-text-arabic {
+        font-size: 25px;
+        line-height: 220%;
+        font-family: lpmq;
+        direction:rtl;
+        text-align:justify;
+    }
+    &-text-translation {
+        color: #777;
+        margin-top: 15px;
+        font-size: 13px;
+        text-align: justify;
+    }
+    &:nth-child(even) {
+        background-color:#f7f7f7;
     }
 }
-[hidden] { display: none !important;}

@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab|Mukta+Malar');
 
 * {
     box-sizing: border-box;
     font-family: 'Roboto Slab', serif;
+}
+body {
+    margin: 0;
 }
 @font-face{
     font-family:surah_names;
@@ -12,7 +15,7 @@
     font-style:normal
 }
 [class*=" icon-surah"],[class^=icon-surah]{
-    font-family:surah_names!important;
+    font-family:surah_names !important;
     speak:none;
     font-style:normal;
     font-weight:400;
@@ -21,7 +24,7 @@
     line-height:1;
     font-size:25px;
     -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale
+    -moz-osx-font-smoothing:grayscale;
 }
 .icon-surah59:before{
     content:"\E900"

@@ -1,47 +1,53 @@
-<aside class="right-side">
-  <div class="logo" #logo>
-    <img src="assets/logo.png">
-    <h4>Al-Qur'an</h4>
-    <h5>Terjemahan Indonesia</h5>
-  </div>
-  
-  <div class="filter" #filter>
-    <div class="filter-button-group">
-      <button [class]="activeFilter === 'surah' ? 'active' : ''" (click)="setActiveFilter('surah')">Surat</button>
-      <button [class]="activeFilter === 'juz' ? 'active' : ''" (click)="setActiveFilter('juz')">Juz</button>
+<ng-scrollbar #scrollRef class="sheet-wrapper" (scrollState)="pushAyahs()">
+  <div class="sheet">
+
+    <div class="surah-header">
+      <div class="ornament left"></div>
+
+      <div class="surah-title">
+        <h1><i class="icon-surah{{ surah?.chapter_number }}"></i> <i class="icon-surah"></i></h1>
+      </div>
+
+      <div class="ornament right"></div>
+
+      <div class="surah-name-translation">
+        <span>{{ surah?.name_simple }} - {{ surah?.translated_name.name }}</span>
+      </div>
     </div>
-  </div>
 
-  <div class="surah-list" #surahList [hidden]="activeFilter === 'juz'">
-    <a [class]="activeSurah === surah.nomor ? 'surah-item active' : 'surah-item'" *ngFor="let surah of surahs" [routerLink]="'/'+surah.nomor">
 
-      <div class="surah-number-wrapper">
-        <span class="surah-number">{{ surah.nomor }}</span>
+    <div class="surah-container">
+      <div class="ayah" *ngIf="surah?.bismillah_pre">
+        <div class="bismillah">
+          <span class="icon-number">3</span>
+          <span class="icon-number">2</span>
+          <span class="icon-number">1</span>
+        </div>
       </div>
-      
-      <div class="surah-name">
-        <span class="surah-name-indonesia">{{ surah.nama }}</span>
-        <br />
-        <span class="surah-name-translation">{{ surah.arti }}</span>
-      </div>
-      
-      <div class="surah-icon">
-        <i [class]="'icon-surah'+surah.nomor"></i>
-      </div>
-    </a>
-  </div>
 
-  <div class="juz-list" #juzList [hidden]="activeFilter === 'surah'">
-    <a class="juz-item" [routerLink]="'/juz/'+juz.number" *ngFor="let juz of juzs; let i = index">
-      
-      <div class="juz-number-wrapper">
-        <span class="juz-number">{{ juz.number }}</span>
+      <div class="ayah" *ngFor="let ayah of ayahs">
+        <div class="ayah-control">
+          <div class="ayah-index">
+            <span class="ayah-key">{{ ayah.verse_key }}</span>
+            <br>
+            <span class="ayah-juz-number">Juz {{ ayah.juz_number }}</span>
+          </div>
+        </div>
+
+        <div class="ayah-text">
+          
+          <div class="ayah-text-arabic">
+            {{ ayah.text_madani }} 
+            
+          </div>
+          
+          <div class="ayah-text-translation">
+            <span class="terjemah">TERJEMAH</span><br>
+            {{ ayah.translations.length > 0 ? ayah.translations[0].text : null }}
+          </div>
+        </div>
       </div>
-      <div class="juz-ayah-range">
-        <span class="ayah-start">{{ surahs[juz.start.number-1]?.nama + ' ayat ' + juz.start.verse }}</span>
-        <br />
-        <span class="ayah-end">{{ surahs[juz.end.number-1]?.nama + ' ayat ' + juz.end.verse }}</span>
-      </div>
-    </a>
+    </div>
+
   </div>
-</aside>
+</ng-scrollbar>

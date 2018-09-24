@@ -1,0 +1,159 @@
+@import '../../global.scss';
+
+.right-side {
+    background-color: $primaryColor;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 18%;
+    height: 100%;
+    overflow-y: hidden;
+}
+.logo {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    overflow: auto;
+    img {
+        width: 100px;
+    }
+    h4, h5 {
+        margin: 0;
+        color: #fff;
+    }
+}
+.filter {
+    &-button-group {
+        overflow: auto;
+        display: block;
+        
+        button {
+            width: 50%;
+            display: inline-block;
+            float: left;
+            border: none;
+            outline: none;
+            background-color: $primaryColorDark;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            &.active {
+                background-color: $secondaryColor !important;
+            }
+        }
+    }
+}
+.search-box {
+    width: 100%;
+    display: block;
+    background-color: #335081;
+    padding: 6px 10px;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+%number-wrapper {
+    width: 15%;
+    padding: 9px 0;
+    float: left;
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+    background-image: url(../../assets/images/frame.png);
+    background-position: center;
+    background-size: 100%;
+}
+%number {
+    color: $secondaryColor;
+    font-size: 10px;
+    margin-top: 0px;
+    display: block;
+}
+%list-item {
+    float: left;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.surah {
+    &-list {
+        position: absolute;
+        overflow-y: scroll;
+        display: block;
+        padding-bottom: 40px;
+        height: 100px;
+    }
+    &-item {
+        @extend %list-item;
+    }
+    &-item:hover, &-item.active {
+        background-color: $primaryColorDark;
+    }
+    &-number-wrapper {
+        @extend %number-wrapper;
+    }
+    &-number {
+        @extend %number;
+    }
+    &-name {
+        width: 55%;
+        float: left;
+        display: inline-block;
+        margin-top: -4px;
+        padding-left: 10px;
+        line-height: 15px;
+    }
+    &-name-indonesia {
+        font-size: 12px;
+        font-weight: bold;
+        color: $secondaryColor;
+    }
+    &-name-translation {
+        font-size: 11px;
+        color: #eee;
+        font-family: 'Mukta Malar', sans-serif;
+    }
+    &-icon {
+        width: 30%;
+        float: left;
+        display: inline-block;
+        text-align: right;
+        i {
+            font-size: 20px;
+            color: #fff;
+        }
+    }
+}
+.juz {
+    &-list {
+        position: absolute;
+        overflow-y: scroll;
+        display: block;
+        padding-bottom: 40px;
+    }
+    &-number-wrapper {
+        @extend %number-wrapper;
+    }
+    &-number {
+        @extend %number;
+    }
+    &-ayah-range {
+        padding-left: 10px;
+        width: 85%;
+        float: left;
+    }
+    &-item {
+        @extend %list-item;
+        .juz-ayah-range {
+            font-size: 11px;
+            color: #eee;
+        }
+    }
+    &-item:hover, &-item.active {
+        background-color: $primaryColorDark;
+    }
+}
+[hidden] { display: none !important;}

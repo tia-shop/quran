@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ScrollbarModule } from 'ngx-scrollbar';
+import { NgProgressModule } from 'ngx-progressbar';
 
 import { AppComponent } from './app.component';
 import { SurahComponent } from './surah/surah.component';
-import { SheetComponent } from './sheet/sheet.component';
+import { SurahListComponent } from './surah-list/surah-list.component';
 
 const appRoutes: Routes = [
   {
@@ -13,19 +15,20 @@ const appRoutes: Routes = [
     redirectTo: '/1',
     pathMatch: 'full'
   },
-  { path: ':surah', component: SheetComponent },
-  { path: 'juz/:juz', component: SheetComponent },
+  { path: ':surah', component: SurahComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     SurahComponent,
-    SheetComponent
+    SurahListComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    ScrollbarModule,
+    NgProgressModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
