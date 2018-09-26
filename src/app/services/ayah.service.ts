@@ -11,7 +11,7 @@ export class AyahService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getAyahs(surahNumber): Observable<Ayahs> {
-    return this.httpClient.get<Ayahs>(global.baseUrl + 'chapters/' + surahNumber +'/verses?translations%5B%5D=33&language=id');
+  getAyahs(surahNumber, offset = 0): Observable<Ayahs> {
+    return this.httpClient.get<Ayahs>(global.baseUrl + 'chapters/' + surahNumber +'/verses?offset='+offset+'&limit=10&translations%5B%5D=33&language=id');
   }
 }

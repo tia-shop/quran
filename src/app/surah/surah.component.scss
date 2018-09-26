@@ -14,10 +14,11 @@
     font-family: ayah_number;
 }
 .sheet-wrapper {
+    top: 0;
+    right: 0;
     position: absolute;
     width: 82%;
-    height: 100%;
-    background-color: #f1f1f1;
+    overflow: scroll;
 }
 .sheet {
     padding: 30px;
@@ -73,6 +74,10 @@
 .bismillah {
     text-align: center;
     font-size: 30px;
+    p {
+        color: #777;
+        font-size: 13px;
+    }
 }
 .terjemah {
     color: $primaryColor;
@@ -97,10 +102,10 @@
             line-height: 12px;
             .ayah-key {
                 font-weight: bold;
-                font-size: 14px;
+                font-size: 12px;
             }
             .ayah-juz-number {
-                font-size: 12px;
+                font-size: 10px;
             }
         }
     }
@@ -116,10 +121,13 @@
         direction:rtl;
         text-align:justify;
     }
+    &-arabic-number {
+        font-size: 18px !important;
+    }
     &-text-translation {
         color: #777;
-        margin-top: 15px;
         font-size: 13px;
+        margin-top: 15px;
         text-align: justify;
     }
     &:nth-child(even) {

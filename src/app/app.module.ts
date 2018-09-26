@@ -8,6 +8,8 @@ import { NgProgressModule } from 'ngx-progressbar';
 import { AppComponent } from './app.component';
 import { SurahComponent } from './surah/surah.component';
 import { SurahListComponent } from './surah-list/surah-list.component';
+import { ArabicNumberPipe } from './pipes/arabic-number.pipe';
+import { ControlComponent } from './control/control.component';
 
 const appRoutes: Routes = [
   {
@@ -22,7 +24,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     SurahComponent,
-    SurahListComponent
+    SurahListComponent,
+    ArabicNumberPipe,
+    ControlComponent
   ],
   imports: [
     BrowserModule,

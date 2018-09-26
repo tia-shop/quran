@@ -1,6 +1,7 @@
-<ng-scrollbar #scrollRef class="sheet-wrapper" (scrollState)="pushAyahs()">
+<div class="sheet-wrapper" #sheetWrapper>
+  <app-control></app-control>
+  
   <div class="sheet">
-
     <div class="surah-header">
       <div class="ornament left"></div>
 
@@ -22,6 +23,7 @@
           <span class="icon-number">3</span>
           <span class="icon-number">2</span>
           <span class="icon-number">1</span>
+          <p>Dengan menyebut nama allah yang maha pengasih lagi maha penyayang</p>
         </div>
       </div>
 
@@ -37,8 +39,7 @@
         <div class="ayah-text">
           
           <div class="ayah-text-arabic">
-            {{ ayah.text_madani }} 
-            
+            {{ ayah.text_madani }} <span class="ayah-arabic-number">﴿﻿{{ ayah.verse_number | arabicNumber }}﻿﴾</span>
           </div>
           
           <div class="ayah-text-translation">
@@ -48,6 +49,5 @@
         </div>
       </div>
     </div>
-
   </div>
-</ng-scrollbar>
+</div>

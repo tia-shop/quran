@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd } from '@angular/router';
 import { SurahService } from '../services/surah.service';
 import { AyahService } from '../services/ayah.service';
@@ -13,12 +13,20 @@ import { NgProgress } from 'ngx-progressbar';
 })
 export class SurahComponent implements OnInit {
   @ViewChild('scrollRef') scrollRef: ScrollbarComponent;
-  
+  @ViewChild('scrollRef') sheetWrapper: ElementRef;
+  @HostListener("window:scroll", [])
+  onWindowScroll(): void {
+    var position = document.scrollingElement.scrollHeight;
+    var scrolled = window.scrollY + document.documentElement.clientHeight;
+
+    if (position === scrolled)
+      this.pushAyahs();
+  }
+
   surah: Surah;
   ayahs = [];
-  scrollHeight: number;
-  scrolled: number = 0;
-  offset: number = 0;
+  currentPage: number = 0;
+  totalPages: number = 0;
 
   constructor(private surahService: SurahService, private ayahService: AyahService, private activatedRoute: ActivatedRoute,
     public ngProgress: NgProgress) { }
@@ -28,25 +36,28 @@ export class SurahComponent implements OnInit {
       this.ngProgress.start();
       this.surahService.getSurah(params.surah).subscribe(surah => this.surah = surah.chapter);
       this.ayahService.getAyahs(params.surah).subscribe(ayahs => {
-        this.ayahs = ayahs.verses
+        this.ayahs = ayahs.verses;
+        this.currentPage = ayahs.meta.current_page;
+        this.totalPages = ayahs.meta.total_pages;
         this.ngProgress.done();
-        this.scrollRef.scrollYTo(0, 200);
-        this.scrollHeight = this.scrollRef.view.scrollHeight;
-        this.scrolled = 0;
+        window.scrollTo(0, 0)
       });
     });
+
+    
   }
 
-  pushAyahs(event) {
-    this.scrollRef.update();
-    this.scrolled = this.scrollRef.view.scrollTop;
+  ngAfterViewInit() {
     
-    if (this.scrolled >= this.scrollHeight) {
-      this.scrollHeight += this.scrolled;
-      this.ayahService.getAyahs(this.surah.chapter_number).subscribe(ayahs => {
-        ayahs.verses.forEach((ayah, index) => {
-          this.ayahs.push(ayah);
-        });
+  }
+
+  pushAyahs() {
+    if (this.totalPages > this.currentPage) {
+      this.ngProgress.start();
+      this.ayahService.getAyahs(this.surah.chapter_number, this.currentPage * 10).subscribe(ayahs => {
+        this.currentPage = ayahs.meta.current_page;
+        this.ngProgress.done();
+        ayahs.verses.forEach(ayah => this.ayahs.push(ayah));
       });
     }
   }
